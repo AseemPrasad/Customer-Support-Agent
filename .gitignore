@@ -1,0 +1,19 @@
+# Environment files
+.env
+.env.local
+
+# Raw large dataset
+data/raw/
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Vector database binaries (reproducible via python ingest_smart_sample.py)
+amazon_kb/
+
+# Evaluation outputs & temporary logs
+eval_results/
+*.log

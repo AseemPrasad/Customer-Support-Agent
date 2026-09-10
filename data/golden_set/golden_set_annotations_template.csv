@@ -1,0 +1,214 @@
+﻿# INSTRUCTIONS
+# ------------
+# Fill columns below for each test_id:
+#   gold_intent: order_tracking_delay | damaged_defective_item | billing_unauthorized_charge |
+#                legal_regulatory_churn | account_access_security | general_inquiry
+#   gold_decision: AUTO_REPLY or ESCALATE
+#   gold_reason: leave NONE for AUTO_REPLY, else a short reason (e.g. 'PII order id', 'legal threat')
+#   required_routing: team to route to if ESCALATE, else NA
+#   forbidden_elements: comma-separated list of things the reply MUST NOT contain
+#                       (e.g. 'order id PII', 'email', 'legal admission', 'refund promise')
+#   agent_notes: free text for ambiguity/tricky cases
+# Do not modify test_id, input_tweet or expected_language.
+# The source_intent column is only the sampling bucket, NOT the gold label.
+test_id,input_tweet,expected_language,gold_intent,gold_decision,gold_reason,required_routing,forbidden_elements,agent_notes,source_intent
+1,@243547 @115830 I can testify to this since it's been myself that's been stuck home all week waiting on the parcel that never arrived! 10gbp is preferable to the initial compo offer of 5gbp! Quite cheeky imo.,en,,,,,,,order_tracking_delay
+2,@115821 thank you for lying to me about two day shipping. Package said out for delivery all day. Where is it? Never delivered.,en,,,,,,,order_tracking_delay
+3,"@AmazonHelp Yes, still waiting on a current order which was due to arrive today. Tracking info is useless and no card from Hermes.",en,,,,,,,order_tracking_delay
+4,@115830 I’m a prime member and ordered an item with a delivery date of today and the item hasn’t even been dispatched yet?! What’s going on??,en,,,,,,,order_tracking_delay
+5,"Dear @AmazonHelp i purchased Amazon Prime because of 'guaranteed shipping' for my nephews bday, make sure the stuff gets there on time...mine is at least 3 days late. Thanks.",en,,,,,,,order_tracking_delay
+6,@AmazonHelp Haven't received anything!,en,,,,,,,order_tracking_delay
+7,".@115821 If I’m paying for Prime to have 2 day free shipping, why is it saying my Prime order won’t be delivered until next Tuesday? https://t.co/XokrfTkYv3",en,,,,,,,order_tracking_delay
+8,@AmazonHelp My orders keep getting delayed and its effecting me in school. I order stuff in enough time with my prime to get it &amp;this keeps happening :(,en,,,,,,,order_tracking_delay
+9,"great, thanks @115821 now that 2 day shipping for my dog food is apparently six day shipping, im feeding my dogs leather. thanks a lot amazon @115821 @115821",en,,,,,,,order_tracking_delay
+10,"@115821 why do you lie and say you ship ups no tracking number,$400 of food never delivered shipper says no boxes!!! LIES SCAM AMAZON SUCKS!",en,,,,,,,order_tracking_delay
+11,@115830 can someone actually explain what this means👇🏻 It says it qualifies for free delivery in the uk yet it charges me for shipping?!?! https://t.co/O4NB3qmx3m,en,,,,,,,order_tracking_delay
+12,@AmazonHelp no reason. Tried to get a refund on my shipping was told I had to wait until Tuesday to see if it gets delivered or not,en,,,,,,,order_tracking_delay
+13,Come on @115821 get your crap together! When it says one day shipping and it’s not here by the time you suggest then you change the date?!?,en,,,,,,,order_tracking_delay
+14,"Remind me never to preorder my books from @115821 , what's the point of placing my order weeks ago if you wont bother shipping it to me until a week after it's release?   😭😭😭 #bookwormproblems",en,,,,,,,order_tracking_delay
+15,@AmazonHelp please help me get my parcel! No explanation for late delivery and I need it before 5pm today!,en,,,,,,,order_tracking_delay
+16,@115821 Prime where 2 day shipping means 4 days #fail #ripoff,en,,,,,,,order_tracking_delay
+17,So @115821 @AmazonHelp what's the policy if I paid for same-day shipping and it doesn't show up? Because someone is getting a phone call or an email tomorrow. I promise I won't bite. :-),en,,,,,,,order_tracking_delay
+18,@AmazonHelp I am located in Florida. How on earth is this acceptable for a 1-day shipping order? This has happened TWICE in a row both 1 day shipping. 2 weeks to get 2 orders with 1 day shipping is ridiculous.. https://t.co/uCMfRos4Gz,en,,,,,,,order_tracking_delay
+19,What is up with @116090 not shipping ANYTHING with @132668. Frustrating because these other companies can’t access mailboxes. 😭,en,,,,,,,order_tracking_delay
+20,@AmazonHelp Ordered a pkg with 2 day shipping on sept. 25. Said it was delayed and expected the 29th. Never came. Request for refund denied?,en,,,,,,,order_tracking_delay
+21,"@119625 so i have watched more than 7 episodes of #Dexter &amp; a full movie, but haven't received the email for winning #FireTVStick",en,,,,,,,order_tracking_delay
+22,@AmazonHelp @7092 @115821 where is the order not received Today as well ... i want compensation https://t.co/UkIMH0oi0A,en,,,,,,,order_tracking_delay
+23,@AmazonHelp Usps. Attached is the tracking info. It was literally 19 miles away from my house 16 1/2 hours ago. Are they walking it to my house?! https://t.co/a8bPlFjp30,en,,,,,,,order_tracking_delay
+24,@AmazonHelp @253565 I feel your pain. I currently have 2 packages missing or delayed.,en,,,,,,,order_tracking_delay
+25,@AmazonHelp The tracking on my order says my package was delivered last week but I have not been able to find it and the office at my apartment says they don't have it either.  How can I get the stuff I ordered?,en,,,,,,,order_tracking_delay
+26,"@AmazonHelp If the package is 'in transit' the link doesn't work. UPS tracking shows it delivered it almost a month ago, but it didn't show as received.",en,,,,,,,order_tracking_delay
+27,@AmazonHelp Would like some action taken against this as this is outright lies &amp; I have obviously not received my package. Not satisfactory,en,,,,,,,order_tracking_delay
+28,I'm done ordering from @116090. Over half my recent orders have had shipping problems and delays.,en,,,,,,,order_tracking_delay
+29,"@115850  I'm a prime member , u did now delivered my last package. Now my delivery date 5th Nov and ur saying we are sorry https://t.co/0Vyqrc1kbr",en,,,,,,,order_tracking_delay
+30,@AmazonHelp Amazon is not longer offering free shipping to Mexico?,en,,,,,,,order_tracking_delay
+31,@AmazonHelp Sent a msg 2 help pge. Bought thermistor cartridge for my 3d printer it arrived damaged were glue was dried out. Trying to get another asap,en,,,,,,,damaged_defective_item
+32,"@115850 If your coupon codes doesn't work, why do you provide them to customers? https://t.co/bR9xwfajuS",en,,,,,,,damaged_defective_item
+33,"@AmazonHelp It's still in its plastic, but the disc is loose and there is rattling parts, it has been squashed or broken during transit or packing. I didn't click return on the website because it will cost me more than the original item and postage combined to return the broken DVD.",en,,,,,,,damaged_defective_item
+34,"Dear @115821, thank you for packing the bath towels I ordered in bubble wrap as it is very distressing to receive broken bath towels.",en,,,,,,,damaged_defective_item
+35,So the nearly 700$ @138021 960 Pro M.2 drive I bought from @115821 is a dead. Doesn't work at all. Never buying Samsung drives from them again.,en,,,,,,,damaged_defective_item
+36,Deliveries from @115821 have been late and damaged not feeling like this is a Prime service.,en,,,,,,,damaged_defective_item
+37,@AmazonHelp Thank you.. but the link which you sent is not working,en,,,,,,,damaged_defective_item
+38,"@115850 jst got this delivered now,it's status also is not updated to delivered but the protective padding is damaged, request for refund. https://t.co/199Gk8xB80",en,,,,,,,damaged_defective_item
+39,"#Amazon, whats wrong with the response about the damaged package and product ?",en,,,,,,,damaged_defective_item
+40,@AmazonHelp 4 out of the 8 products were never received and what was received the quality was less than subpar “800 TC” duvets should feel like actual 800 thread count. If I never shopped @115821 again it’ll be too soon 😒,en,,,,,,,damaged_defective_item
+41,@694683  Trying to use this code in U.K. On Amazon but it's not working. Any help? Thx,en,,,,,,,damaged_defective_item
+42,@115821 need help regarding defective IPhone7 return query,en,,,,,,,damaged_defective_item
+43,"@AmazonHelp Ok there is a problem,my WiFi is perfectly working and when I try to access Amazon from wifi it doesn't work,I get the error as shown in the screenshot.When I use my cellular date it works!!",en,,,,,,,damaged_defective_item
+44,"@AmazonHelp I did, was given another refund for an item that was damaged and an apology.",en,,,,,,,damaged_defective_item
+45,@115821  my Christmas star came broken and you still haven't shipped out our replacement order 3 days later.  #horriblecustomerservice,en,,,,,,,damaged_defective_item
+46,"@AmazonHelp Thanks for response; unfortunately, it's still not working.  any other advice?",en,,,,,,,damaged_defective_item
+47,"@AmazonHelp BTW, I've had both items less than 3 weeks. Only opened to make sure they weren't defective electronics and they sadly were.",en,,,,,,,damaged_defective_item
+48,@AmazonHelp Vizio smart TV - there is an app but quality and crash rate are terrible. Functions also do not work with other remotes as most apps do,en,,,,,,,damaged_defective_item
+49,@115850 Hey Amazon india why Ur Amazon gift card Of Sun feast yippe is not working  ?,en,,,,,,,damaged_defective_item
+50,One of the mugs I ordered off @AmazonHelp came broken in a bunch of pieces though so that’s sad. 😭,en,,,,,,,damaged_defective_item
+51,"@115850 got a defective battery that I am not able to return as post office says no. I have till 21st Oct to return, but CC now says no.",en,,,,,,,damaged_defective_item
+52,"@AmazonHelp Tried calling, still can't connect! Still the same announcement of being unable to find my order! Please give me a number I can call. Your IVR system is broken.",en,,,,,,,damaged_defective_item
+53,"@AmazonHelp how/where can I provide (packaging feedback)? I've received items that have been damaged, which could have been avoided.",en,,,,,,,damaged_defective_item
+54,Thanks @115830 for leaving my parcel outside and marking as delivered.. not like it could've been stolen/damaged 🙄 @AmazonHelp #badservice https://t.co/tCk9jdu5et,en,,,,,,,damaged_defective_item
+55,@AmazonHelp I filled out that form yesterday then got an email saying I had gone past the 90 day deadline when I bought the item fewer than 90 days ago. I just want a refund for damaged item. It's not hard.,en,,,,,,,damaged_defective_item
+56,@AmazonHelp “amazon basics” charger not working 20 days after purchase ??,en,,,,,,,damaged_defective_item
+57,@AmazonHelp Am I doing the right thing to get a replacement TV by having it returned? It turned up broken and I’m doing what the site says,en,,,,,,,damaged_defective_item
+58,@115821 @115851 @118702 @58296 @120320 @120844 @58297   What kind of shit service by AMAZON delivered defective product.,en,,,,,,,damaged_defective_item
+59,"@AmazonHelp I didn't know you had to choose to have it packed, so no I didn't, but surely no-one would opt to have their item just sent without any covering at all?? it's damaged anyway.",en,,,,,,,damaged_defective_item
+60,"@115850 @AmazonHelp  5 Products no solution worst Quality and poor service also ur policies are waste &amp; u ppl nw dont ask me to fill details coz i wont for 5 orders , if you really care then all i need is a SOLUTION #NoToAmazon #NoUseOfPrime",en,,,,,,,damaged_defective_item
+61,"@AmazonHelp Email ID added in Amazon account. Now, check the return-refund request and process it ASAP.  Send me confirmation via SMS and Email.",en,,,,,,,billing_unauthorized_charge
+62,@115850 Take back and refund my basic money I.e. 1199,en,,,,,,,billing_unauthorized_charge
+63,@115850 Easy replacement or refund without notice joker lier no ethics and policy follow @115851 @115850 joker's,en,,,,,,,billing_unauthorized_charge
+64,I just accidently bought a digital code for 75k VC for NBA 2k17 on @115821  and i meant to buy it for 2k18 🙃😞 anyway to get a refund or switched for 2k18? @166805 @AmazonHelp,en,,,,,,,billing_unauthorized_charge
+65,@AmazonHelp No the refund to my debit card failed so I was asked to provide bank informaiton for a bank transfer refund.,en,,,,,,,billing_unauthorized_charge
+66,"@115830 this is just ridiculous, new credit card details out in and your still saying unable to update charge payment!!! I have customers waiting and you’re blocking the account!!! #disgrace #joke",en,,,,,,,billing_unauthorized_charge
+67,"@AmazonHelp @115851 I hv spoken to customer care. Initiate refund. Phone not according to description. Mentioned bloatware free, bt has bloatwares.",en,,,,,,,billing_unauthorized_charge
+68,"@AmazonHelp So 1 month free prime after 2 days late, 3 days late &amp; I was refunded but told I’d still receive my order... LOL! Amazon prime is balls!",en,,,,,,,billing_unauthorized_charge
+69,@115850 when wiil i get my refund????😡😡😡 https://t.co/j52OoUymY7,en,,,,,,,billing_unauthorized_charge
+70,@115850  @AmazonHelp where's my refund ? Enough of fleecing customers. https://t.co/RN4EBmTzIy,en,,,,,,,billing_unauthorized_charge
+71,"Bought a hammer drill from (@115821) 2 months ago, parcel lost, amazon  refunded me after i choose the resending options, the price increased.",en,,,,,,,billing_unauthorized_charge
+72,@AmazonHelp I placed it on .com and used a different address (US instead of Canada because I'll be there for thanksgiving) same credit card as my .ca though. the email was from account alert.,en,,,,,,,billing_unauthorized_charge
+73,@AmazonHelp Contacted my bank and they were unable to track the refund using the refund reference code given by Amazon.,en,,,,,,,billing_unauthorized_charge
+74,@AmazonHelp Where do you request a refund?????,en,,,,,,,billing_unauthorized_charge
+75,@AmazonHelp I want to be contacted by an English-speaking supervisor or manager. Transferred five different times in chat for a refund.,en,,,,,,,billing_unauthorized_charge
+76,"@115821 Purchased kindle content on Sep 26 which did not download.  Tech clueless on how to fix prob, hv recd emails. I want refund, Amazon.",en,,,,,,,billing_unauthorized_charge
+77,@AmazonHelp I can't find the option to get a refund on my latest payment,en,,,,,,,billing_unauthorized_charge
+78,@AmazonHelp Yes I have appealed the decision as per the the link. Still awaiting for my refund. Please comply asap.,en,,,,,,,billing_unauthorized_charge
+79,@AmazonHelp I don't know what is wrong with you people. Why my refund is not processing. @1840 Honorable sir please please look into this. @1145 @112441,en,,,,,,,billing_unauthorized_charge
+80,"@AmazonHelp Purchased a film to stream on prime video, meta data said english audio... actual audio was german. I can't find info about how to report this and get a refund... #help #hilfe",en,,,,,,,billing_unauthorized_charge
+81,@AmazonHelp How can I return my devices for a refund since your team cannot help me.,en,,,,,,,billing_unauthorized_charge
+82,"@AmazonHelp The delivery guy never delivered the product but it showed product was delivered. After investigation, now the customer care raised refund.",en,,,,,,,billing_unauthorized_charge
+83,@AmazonHelp What details you need and why you are not able to fetch the details. Don't you have a management system for this? You need bank statement of customers for giving them promised cashback. Pathetic.,en,,,,,,,billing_unauthorized_charge
+84,"I wake up to UPS losing my iPhone X, Amazon has been charging me for two Prime memberships, someone stole my credit card i info and did numbers on my shit. Yeah fuck today already.",en,,,,,,,billing_unauthorized_charge
+85,"@AmazonHelp YOU are the 3rd person on this one simple thing, refund my $14 And change.",en,,,,,,,billing_unauthorized_charge
+86,@AmazonHelp kindly contact and process a refund asap plz,en,,,,,,,billing_unauthorized_charge
+87,@AmazonHelp Pick up the items and refund the amount! I do not understand even after raising the concern multiple times across various platforms,en,,,,,,,billing_unauthorized_charge
+88,"@AmazonHelp Hi, I have not accepted the delivery. How much time will it take for the refund?",en,,,,,,,billing_unauthorized_charge
+89,"@115850 ...I am prime customer .I bought 50000 rupee products by Amazon but I bought knote8 ,my money deducted but product not done",en,,,,,,,billing_unauthorized_charge
+90,@115850  please  refund to all my returned items not by cheque and add it in Amazon Pay.,en,,,,,,,billing_unauthorized_charge
+91,@AmazonHelp I went to link and it seems the seller saw the issue and now has it fixed.  Thank you for your prompt response.,en,,,,,,,legal_regulatory_churn
+92,"@AmazonHelp Check the IMEI no is showing on the phone I don't know why courier guys are creating issues in pick up, I am sick and tired https://t.co/mdTy2Cemmk",en,,,,,,,legal_regulatory_churn
+93,"@AmazonHelp Hi, i’ve looked at the checklist you have sent and I’ve followed the guidance. Still having an issue; when I ask Alexa to set timer, she confirms the timer is set but then says “sorry i’m having trouble” and the timer does not set.",en,,,,,,,legal_regulatory_churn
+94,"@AmazonHelp This has been a CONSTANT issue since we moved in May. Damaged boxes, some left in driveway instead of at door, one never arrived.",en,,,,,,,legal_regulatory_churn
+95,@AmazonHelp @115850 STILL NO UPDATE ON CASH UPLOAD. HOW MUCH TIME IS REQUIRED TO INVESTIGATE A SIMPLE FRAUD CASE OF CASH UPLOAD? I HAVE GIVEN ANOUGH WARNINGS ... ITS NOT LONG B4 I FILE FIR FOR FRAUD AND GO TO CONSUMER COURT. #AmazonFails #AmazonPayQuiz #AmazonPay #AmazonFraud @115851,en,,,,,,,legal_regulatory_churn
+96,"@AmazonHelp Yup. Did that. The issue is that your website makes One Click Ordering a Cinch, but if you have an issue with an order you need to spend hours trying to get help. Kuddos. It's a Great Business Model--to exploit consumers. #Amazon",en,,,,,,,legal_regulatory_churn
+97,"@AmazonHelp @2150 delivery guys are dishonest, and they break your delivery promises.  You need to stop using them.  Same issues over many months.",en,,,,,,,legal_regulatory_churn
+98,"@AmazonHelp Uninstall, &amp; re-installing the app is not a useful solution. I've got something similar for an earlier issue too. Can you please recheck?",en,,,,,,,legal_regulatory_churn
+99,"@AmazonHelp Once again, your courrier has 'delivered' a package that's not actually at my house.... second time I've had this issue with you",en,,,,,,,legal_regulatory_churn
+100,There is an issue with my mi 3c router that i bought from @115850  return window is closed what should i do now. @160663  @3977,en,,,,,,,legal_regulatory_churn
+101,@AmazonHelp You team ws suppose to reach out with a solution. You should resolve these issues at priority @115850 @115851,en,,,,,,,legal_regulatory_churn
+102,"@115821, From a long time customer, I just want to say that I've always had nothing but excellent help from @AmazonHelp. I had a couple issues with some recent orders but were quickly resolved. 👊🙌",en,,,,,,,legal_regulatory_churn
+103,@AmazonHelp My registered mail with Amazon is __email__ Let me know what more details you want I am ready to share even my secret birth marks here in open do as to expose fraud Amazon. Do not try to deviate and run away,en,,,,,,,legal_regulatory_churn
+104,@AmazonHelp No. Just spoke to your cs who didn’t seem to understand the issue either.,en,,,,,,,legal_regulatory_churn
+105,"@AmazonHelp Thanks, the issue seems to have been resolved, but my confidence has been shaken, hope it is normal soon. Regards.",en,,,,,,,legal_regulatory_churn
+106,@115850 Today again I received wrong item : 403-3179435-0953905,en,,,,,,,pii_leak
+107,@115828 Hi. I pre-ordered Skyrim on Switch and it hasn't even been dispatched yet. Why is this? Order number: 026-8568326-8258721,en,,,,,,,pii_leak
+108,"@115850 @115850 original order 408-9688319-8745919 replacement order 408-9661047-7263516, tired of waiting, help me",en,,,,,,,pii_leak
+109,"@115830 Hi, where is 206-5030659-1416351? It was supposed to arrive yesterday. Feel free to PM me. Thanks.",en,,,,,,,pii_leak
+110,@AmazonHelp order 406-5346056-8286767 I want a refund for the product. https://t.co/CKTsoBPMgb,en,,,,,,,pii_leak
+111,"@115850 what is the use of being Prime customers if u can't deliver it in a single day. Orders 406-4107004-3313111, 406-4376349-1697952",en,,,,,,,pii_leak
+112,@115850 I had to pay 195rs extra for order 407-7832280-7125964 to collect it even though I had paid for delivery charges,en,,,,,,,pii_leak
+113,"@AmazonHelp Plz provide me update as i bought many  &amp; return details Order date 27-Oct-2017 Order  408-7381410-8288305 Order total  2,024.00 (4 items)",en,,,,,,,pii_leak
+114,amazon india Hi. What kind of people you employ ? Check out the chat transcripts of my order no. 405-3392140-7451513,en,,,,,,,pii_leak
+115,"@AmazonHelp Not only do your couriers suck at delivery, they also lie thru' their teeth about reasons for non-delivery. e.g. see my feedback on your website about order #171-9453266-8440318.",en,,,,,,,pii_leak
+116,@115851 Order# 404-6901064-4338704 I got d msg that product is out for delivery but agent didnt pick call n he did fraud n updated dat Item marked as rejected by me Mr Tarun from ur team is useless n debating that i need to reorder why i shud be harassed @115821 @AmazonHelp,en,,,,,,,pii_leak
+117,@AmazonHelp @115850 Money has been deducted for ORDER # 406-7140461-3037926 and order stands cancelled. https://t.co/176gfuz7AY,en,,,,,,,pii_leak
+118,@AmazonHelp Order no. - 402-7904169-6240325. This has happened couple of times. Your customer care says we can’t track the order. Pls chk order,en,,,,,,,pii_leak
+119,"Hello @115850 @AmazonHelp Order# 405-2192790-6798713 is not been received in my hand, but status showing delivered to the customer.  Please check &amp; do the needful at the earliest. https://t.co/Vg1ibsZF19",en,,,,,,,pii_leak
+120,@115850 Again bad experience .Its about ordno 408-1798023-9355553. trying to cancel or changing the address but not able to do. plz conact,en,,,,,,,pii_leak
+121,勝手にクレジットから金引き下ろされててAmazonプレミアム会員になってたんだが。。,ja,,,,,,,ja
+122,28日着予定の荷物が届かないんだけどどーなってんの？Amazonさん,ja,,,,,,,ja
+123,@AmazonHelp こちらこそいつもありがとうございます☺️,ja,,,,,,,ja
+124,これが世に聞くアマゾンのフィッシングメールという奴がとうとう来たか… https://t.co/VhSRqRCo5g,ja,,,,,,,ja
+125,アマゾンプライムでホビット観る〜,ja,,,,,,,ja
+126,Amazonで頼んだグラブルのBlu-ray7巻が個人情報の欄でみたら発送完了になってるのにきてないんだが？,ja,,,,,,,ja
+127,"@116313 6,900円では？？",ja,,,,,,,ja
+128,アマゾンが発送するから大丈夫だと思ってた私がいました,ja,,,,,,,ja
+129,密林のコンビニ支払いのメール5時間経ってもまだ届かないですけどお,ja,,,,,,,ja
+130,楽しみにしてたミニスーファミがAmazonのシステムエラーで届かないっぽい。とても悲しい。赤ちゃんの胎動は復活したのでそれは良かった。ミニスーファミ喪失による悲しみが届いて励ましてくれてるのかい、マメ。,ja,,,,,,,ja
+131,@AmazonHelp アップデート確認できました。ちゃんと横位置で使えるようになりました。  ありがとうございます😊。,ja,,,,,,,ja
+132,@401420 Amazonでのイヤホンの注文の支払い方法、、アマギフは登録出来たのだけれど代引きも無いしクレジットカードか携帯支払いって出て、でもアマギフ使うと携帯支払い出来なくてクレカも無いので注文の仕方がわかりません(´；ω；｀),ja,,,,,,,ja
+133,アマゾンで何も買ってないのにアマゾン宛で不在票入ってたんだけど何これ,ja,,,,,,,ja
+134,アマゾンプライムビデオが有能すぎてアニメ消化捗る,ja,,,,,,,ja
+135,Amazonでタブレット注文してコンビニ受取にしてたはずなのに追跡であさっての方向に行っちゃったのどうすればいいんだろう,ja,,,,,,,ja
+136,まじかAmazonプライム有能,ja,,,,,,,ja
+137,@AmazonHelp 丁寧なリプを頂きましてありがとうございます。 プライムは特にアマゾンズシリーズを視聴する為に更新していますが、お急ぎ便のサービスや他プライム作品も多く、快適に利用させて頂いています^ ^ これからもよろしくお願い致します^ ^,ja,,,,,,,ja
+138,しごおわ～♪  帰ったらAmazonからサントラ届いてたっ(≧ω≦),ja,,,,,,,ja
+139,@AmazonHelp ごめんなさい,ja,,,,,,,ja
+140,アマゾンプライムで戦車道！！ https://t.co/siRMba4bIP,ja,,,,,,,ja
+141,@AmazonHelp No han podido validar un num de tel y dirección del titular de la tarjeta y ya mandaron por correo la información y no recibimos respuesta,es,,,,,,,es
+142,@115821 Y hasta dento de un mes no voy a poder abrirlo 😔,es,,,,,,,es
+143,@116875 tienen Monster Hunter Collection Edition para Ps4 con envío a México? #MHWorld,es,,,,,,,es
+144,Mis dos últimos pedidos con @116928 parece que están gafados. Sin embargo que tranquilidad da su compromiso con el cliente.Muchas gracias,es,,,,,,,es
+145,@116928 Poned plástico de burbujas para proteger los libros! Vienen con unos golpes que duelen sólo de mirarlos.,es,,,,,,,es
+146,@55429 @116928  Muchas gracias! 😊😉 https://t.co/XfobV7VkbQ,es,,,,,,,es
+147,@AmazonHelp Si pero la edición especial ... es que ya está en preventa en Amazon usa por eso preguntaba ...👀 cuando la tendrán en México ?,es,,,,,,,es
+148,"@116875 hola un teléfono donde me pueda comunicar con uds, me llego un mail de especialista Amazon solicitando mi edo de cuenta. Quiero saber si esto es real",es,,,,,,,es
+149,@128093 @116875 Hace un mes eran una maravilla. Y se suponía que Amazon Logistics era confiable.,es,,,,,,,es
+150,@AmazonHelp Es mayor a 300 pesos! No creo que sea autorización,es,,,,,,,es
+151,Me compré ayer el libro de #ATC en @116928 y teniendo Prime no me llega hoy... No sé para que pago 🙄😑🙁,es,,,,,,,es
+152,"@AmazonHelp Sí, es un Fire TV Stick vendido por Amazon",es,,,,,,,es
+153,@AmazonHelp A ver si hay suerte y encuentro una Switch a 10 euretes &lt;3,es,,,,,,,es
+154,"Hola @115821, si te instalas en Argentina y no vendes tickets de reventa, creo que estoy para trabajarte unas horas gratis y todo",es,,,,,,,es
+155,"@AmazonHelp Parece un chiste... Porque cualquiera de las opciones de ese link me pide que ingrese, que es justamente lo que el sitio no me deja. Ayuda?",es,,,,,,,es
+156,@AmazonHelp Déja quand je leur pose une simple question ils me disent qu'il leur faut 5 jours pour pouvoir me répondre alors leur demander une étiquette de retour ça risque de prendre 7 jours mdr,fr,,,,,,,fr
+157,"Yep @AmazonHelp, pouvez-vous consulter vos DM (et accessoirement y répondre...)",fr,,,,,,,fr
+158,@AmazonHelp oui une enquête a été ouverte cependant j'avais besoin de ce téléphone dans les temps En attendant je peux pas l'acheter ailleur,fr,,,,,,,fr
+159,"Dites donc @120533 il faudrait penser à revoir vos partenaires de livraison... c'est la 2e fois que le livreur de @120534 ne me livre pas ma commande, sans aucune explication... et après c'est à moi de les contacter via appel payant ! N'abusez pas non plus !",fr,,,,,,,fr
+160,"@AmazonHelp D'accord merci, il y aura des offres sur des produits récents ? Ou c'est secret pour l'instant ? ;)",fr,,,,,,,fr
+161,"@AmazonHelp Eheh, vous êtes super fort ! Ça fait plaisir que vous teniez toujours vos délais ! (Bon après y'a vos prestataires comme colis Privé qui sont complètement à la ramasse mais vous n'y êtes pour rien )",fr,,,,,,,fr
+162,Merci @120533 d’avoir livré mon colis chez mon voisin QUE JE CONNAIS MÊME PAS ET JE NE SAIS PAS OÙ IL HABITE,fr,,,,,,,fr
+163,@AmazonHelp Nous avons effectivement effectué des recherches qui se sont avérées sans résultat !,fr,,,,,,,fr
+164,@AmazonHelp Voilà le bon numéro C30006369103 😊,fr,,,,,,,fr
+165,@AmazonHelp Ok et les reduction c’est sur quel produit  pour Black Friday car j’ai un pc en liste d achat ?,fr,,,,,,,fr
+166,"@AmazonHelp Vu tous les tweets que je viens de lire, c'est inadmissible que Amazon prenne encore @120535 pour ses envois. Laissez nous le choix du transporteur au pire ...",fr,,,,,,,fr
+167,@AmazonHelp @378626 @AmazonHelp j ai exactement le même problème avec seul Firefox 56 en allant sur amazon.de et/ou .fr  SEC_ERROR_OCSP_INVALID_SIGNING_CERT,fr,,,,,,,fr
+168,"@AmazonHelp Ok, merci, je me connecte et j'annule ma commande...",fr,,,,,,,fr
+169,@AmazonHelp C'est pas contre vous j'en ai juste ras le bol de cette boite qui m'oblige à rester chez moi pour réceptionné le colis parce qu'ils sont pas capable d'être ponctuel ou d'avoir un suivi à jour. C'est mon jour de repos j’attends mon colis à  la maison...,fr,,,,,,,fr
+170,"@AmazonHelp Oui, j'ai reçu un mail ce matin me disant que l'article était expédié et qu'il arriverai Jeudi. :/",fr,,,,,,,fr
+171,@AmazonHelp O livro do Poe!!,pt,,,,,,,pt
+172,Os habéis cagado hijos @116928,pt,,,,,,,pt
+173,"agora tem @117086 aqui, que maravilha 💸",pt,,,,,,,pt
+174,@AmazonHelp são donos do melhor atendimento e preços💕,pt,,,,,,,pt
+175,"@117086 Outlander. Li todos os livros de disponíveis! Adoro ler e depois, assistir.",pt,,,,,,,pt
+176,"O rastreamento da @AmazonHelp diz que o produto tá em João Pessoa, mas mandou e-mail dizendo que já fez a 1ª tentativa de entrega em CG.",pt,,,,,,,pt
+177,Serviço de atendimento da @117086 é muito ruim. Estou a mais de 15min esperando atenderem a ligação. Sendo que ja tinha ligado outros dias,pt,,,,,,,pt
+178,ei @115821 libera aí os eps da terceira temp de mr robot,pt,,,,,,,pt
+179,"@AmazonHelp Até 1° de dezembro, se tudo der certo. :3",pt,,,,,,,pt
+180,"@AmazonHelp Ele está 'preparado para remessa', é pra enviar amanhã de acordo com o e-mail que eu recebi, vou ver o site então, obg",pt,,,,,,,pt
+181,@AmazonHelp [PT-BR] Quanto tempo leva para os produtos inseridos no MarketPlace ficarem disponiveis para compra? Obrigada!,pt,,,,,,,pt
+182,@115821 você me odeia?,pt,,,,,,,pt
+183,@AmazonHelp Foi dito q o livro está em encomenda é quando chegar no estoque me enviam. Mas não foi dado prazo algum.,pt,,,,,,,pt
+184,"@AmazonHelp Consegui contato, obrigada. :)",pt,,,,,,,pt
+185,"@115821 parabéns pelas entregas , meus livros chegaram em 2 dias uteis !",pt,,,,,,,pt
+186,@115850हमारे प्रधानमंत्री जी Cashless India को Promote कर रहे है और Amazon cashless की धज्जियाँ उड़ा रही है.payment के बाद Delivery की नही https://t.co/cXJxkQgByS,hi,,,,,,,hi
+187,@128308 @12379 Amazonने मेरी समस्या का हल नहीं निकला। यहाँ जो माल ग्राहक को भेजा जाता उसमें धोखा धड़ी है। मुझे iPhone डुप्लीकेट भेजा और उसकी शिकायत नहीं,hi,,,,,,,hi
+188,"कोई समझा सकता है कि गोबर,ऑर्गैनिक (Organic)या इनॉर्गैनिक (Inorganic) कैसे हो सकता है😂यानी @115850 मशीन से बना इनॉर्गैनिक गोबर बेचते है 😂 https://t.co/Gb1uLHvCPB",hi,,,,,,,hi
+189,"आख़िरकार @AmazonHelp टीम ने मुझे बेवकूफ बना ही दिया। #ThankYou @115850 महज़ ₹1500 रुपयों के लिए आप लोग इतना गिर जाओगे, सोचा नहीं था।",hi,,,,,,,hi
+190,@115850 मैंने गलती से आपकी एक साल की सदस्यता ली है जो मैं नहीं चाहता। आपसे प्रार्थना है कि मेरी राशि INR 499 वापिस कर दिया जाये। धन्यवाद।,hi,,,,,,,hi
+191,"@AmazonHelp भाई साहब। मेरा पैकेज 4 दिन से gurgaon में अंडे दे रहा है, अभी भी delivery Monday दिखा रहा है, कुछ करो",hi,,,,,,,hi
+192,@115850  @115821 .in order 407-7121435-2773162 सर मेने आर्डर दिया ओर अमेज़न ने कैन्सल कर दिया मेरा itme डीलीवरी करेप्लीज़ओर मेरे बहूत ऑडर https://t.co/oo4JbqN1KH,hi,,,,,,,hi
+193,मैने 11/11/2017 को amazon से एक किताब आर्डर की थी। मैंने पेमेंट भी तुरंत कर दिया था और उसकी डिलीवरी 17 से 23 तारीख तक होनी थी। किन्तु जब मैंने amazon से सम्पर्क किया तो बताया गया कि आप का आर्डर 15 तारीख को आपके एड्रेस पर पहुच गया है @115850 @115821 कायर्वाही की गुजारिश।,hi,,,,,,,hi
+194,"आजतक शायद ही @115850 की कोई ऐसी स्कीम रही होगी जिसमें मैंने कुछ-न-कुछ न खरीदा हो। …पर इस बार तो कोई ऑफर, ऑफर लग ही नहीं रहा। …अफसोस…! https://t.co/FdsxHXFdgT",hi,,,,,,,hi
+195,@115850 मैने एक आई फोन 7  9/10/2017 को ओनलाईन खरीदा फोन खराब निकला। बार बार शिकायत करने पर कोई समाधान नहीं हो रहा।,hi,,,,,,,hi
+196,@118919 @119356 अभी तक आपने हमारा problem को solve नहीं किया है why,hi,,,,,,,hi
+197,@172599 @115821 एक जूता 19 दिन में नही पंहुचा पाई ऐमज़ॉन,hi,,,,,,,hi
+198,@115850 @AmazonHelp @115851  @115850 @AmazonHelp  चोरो मुझे मेरे इन ऑडर के पैसे दो #AmazonGreatIndianFestivalSell बोलकर बेवकूफ बना रहे हो उपभोक्ताओं को #Cashback मिलेगा बोलकर अब मुकर गए कितनी ही बार तुमको मैंने ऑडर डिटेल भी सेंड कर दी है लिंक में देखो https://t.co/o7HHLlYBJj,hi,,,,,,,hi
+199,@AmazonHelp amazon... आपकी अपनी चू*या बनाने की दुकान !!,hi,,,,,,,hi
+200,"@30592 जी आधा किलो खून सूख गया book का इंतजार करते करते । @115850 ने 23 नवंबर अपडेट किया था और वो भी टाइम extand हो गया । so now as a penalty, you have to give me more good books to read. 💔🔫",hi,,,,,,,hi

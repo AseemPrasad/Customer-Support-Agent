@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMAZON AGENT // Neo-Brutalist UAT Workbench</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+  <!-- HEADER BAR -->
+  <header class="header">
+    <div class="logo-box">
+      <span class="badge yellow">AMAZON HELP</span>
+      <h1>AGENT //  WORKBENCH ⚡</h1>
+    </div>
+    <div class="status-box">
+      <span class="status-indicator active"></span>
+      <span id="agent-status-text">SYSTEM ONLINE (CHROMA + BGE-M3)</span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- PRESET SCENARIO PILLS -->
+    <section class="section-box">
+      <h2>1. QUICK TEST SCENARIOS</h2>
+      <p class="subtitle">Click a preset to test specific agent decisions & guardrails instantly.</p>
+      <div class="preset-grid">
+        <button class="preset-btn" onclick="loadScenario('delayed_shipping')">
+          <span class="tag">📦 SHIPPING</span> Delayed Package
+        </button>
+        <button class="preset-btn" onclick="loadScenario('legal_threat')">
+          <span class="tag red">⚠️ GUARDRAIL</span> Legal Action Threat
+        </button>
+        <button class="preset-btn" onclick="loadScenario('pii_leak')">
+          <span class="tag red">🔒 PII RISK</span> Order & Credit Card Leak
+        </button>
+        <button class="preset-btn" onclick="loadScenario('multilingual_ja')">
+          <span class="tag cyan">🌐 MULTI-LANG</span> Japanese Inquiry
+        </button>
+        <button class="preset-btn" onclick="loadScenario('damaged_item')">
+          <span class="tag yellow">💥 COMPLAINT</span> Damaged Product
+        </button>
+      </div>
+    </section>
+
+    <!-- MAIN TWO COLUMN WORKBENCH -->
+    <div class="grid-2col">
+
+      <!-- LEFT COLUMN: INPUT TICKET -->
+      <section class="section-box input-card">
+        <h2>2. INCOMING TICKET SANDBOX</h2>
+        <div class="input-group">
+          <label for="tweet-input">Customer Message (Twitter / X Tweet)</label>
+          <textarea id="tweet-input" placeholder="Type or paste customer inquiry here..." rows="6"></textarea>
+        </div>
+        <button id="process-btn" class="main-btn yellow-btn" onclick="processTicket()">
+          ⚡ PROCESS TICKET WITH AGENT
+        </button>
+      </section>
+
+      <!-- RIGHT COLUMN: LIVE DECISION RESULTS -->
+      <section class="section-box output-card" id="output-section">
+        <h2>3. AGENT DECISION & OUTPUT</h2>
+        
+        <div id="placeholder-state" class="empty-state">
+          <p>👈 Submit a ticket or select a quick scenario to inspect agent output.</p>
+        </div>
+
+        <div id="results-state" class="results-container hidden">
+          
+          <div class="badge-row">
+            <div class="metric-pill">
+              <span class="label">INTENT</span>
+              <span id="res-intent" class="value-tag blue">--</span>
+            </div>
+            <div class="metric-pill">
+              <span class="label">DECISION</span>
+              <span id="res-decision" class="value-tag green">--</span>
+            </div>
+            <div class="metric-pill">
+              <span class="label">LANGUAGE</span>
+              <span id="res-language" class="value-tag cyan">--</span>
+            </div>
+          </div>
+
+          <div class="card-field">
+            <label>ESCALATION REASON</label>
+            <div id="res-reason" class="reason-box">--</div>
+          </div>
+
+          <div class="card-field">
+            <label>GENERATED / DRAFTED REPLY</label>
+            <div id="res-reply" class="reply-box">--</div>
+            <div class="char-count"><span id="char-num">0</span> / 240 chars</div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- RAG & PIPELINE INSPECTION PANEL -->
+    <section class="section-box rag-section">
+      <h2>4. PIPELINE & RAG RETRIEVAL INSPECTOR</h2>
+      <p class="subtitle">See historical Amazon resolutions retrieved from ChromaDB to ground this reply.</p>
+      
+      <div id="rag-container" class="rag-grid">
+        <div class="rag-placeholder">No ticket processed yet. Run a ticket above to inspect vector retrieval.</div>
+      </div>
+    </section>
+
+    <!-- EVALUATION SUITE -->
+    <section class="section-box eval-section">
+      <div class="eval-header">
+        <div>
+          <h2>5. GOLDEN EVALUATION SUITE</h2>
+          <p class="subtitle">Run automated metrics & evaluation against golden test samples.</p>
+        </div>
+        <button class="main-btn cyan-btn" id="run-eval-btn" onclick="runEvalBatch()">
+          📊 RUN BATCH EVALUATION
+        </button>
+      </div>
+
+      <div id="eval-results" class="eval-grid hidden">
+        <div class="metric-card">
+          <span class="metric-title">TOTAL EVALUATED</span>
+          <span id="eval-total" class="metric-val">0</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-title">DECISION ACCURACY</span>
+          <span id="eval-acc" class="metric-val green-text">--%</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-title">INTENT MACRO F1</span>
+          <span id="eval-f1" class="metric-val cyan-text">--%</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-title">ESCALATION FNR</span>
+          <span id="eval-fnr" class="metric-val red-text">--%</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-title">PII PASS RATE</span>
+          <span id="eval-pii" class="metric-val yellow-text">--%</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

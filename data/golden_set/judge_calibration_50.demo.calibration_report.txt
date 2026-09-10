@@ -1,0 +1,5 @@
+n=4
+brand_voice_kappa=0.0000
+policy_kappa=0.0000
+pii_accuracy=0.7500
+lang_accuracy=1.0000
