@@ -252,23 +252,6 @@ local Ollama model (≈15–40 s per ticket incl. retrieval + generation). Embed
 time for a full 154k ingest is the one long offline step (~20–40 min CPU); use
 `--max-rows` for a quicker smoke test.
 
-## Fast Multi-Threaded Runner & Web UI
-
-### Parallel Evaluation Execution
-Run 8 workers in parallel for rapid benchmark results (sub-60 seconds for 50 samples):
-
-```bash
-python run_eval_fast.py --dataset data/golden_set/golden_eval_500.gold.jsonl --samples 50 --workers 8
-```
-
-### Interactive Web UAT Dashboard
-Launch the standalone server to test single tickets, view live RAG context, and inspect batch results:
-
-```bash
-python server.py
-```
-Open `http://localhost:8000` in your web browser.
-
 ## Judge Calibration
 
 To measure agreement between the LLM judge and human judgment:
