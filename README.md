@@ -3,10 +3,7 @@
 An end-to-end system that evaluates an AI customer-support agent on real
 AmazonHelp Twitter conversation data. The agent retrieves historical resolved
 conversations, applies deterministic guardrails (PII / severe-keyword
-escalation), and drafts replies in the customer's language through a local
-(Ollama) or remote (OpenAI-compatible) LLM. Outputs are scored with
-classification metrics, a deterministic PII leak check, an LLM-as-a-judge, and
-optional judge-human calibration.
+escalation), supports **multi-lingual replies across 6 languages** (`en`, `ja`, `es`, `pt`, `fr`, `hi`) with localized brand signatures, and drafts responses through a local (Ollama) or remote (OpenAI-compatible) LLM. Outputs are scored with classification metrics, a deterministic PII leak check, an LLM-as-a-judge, and optional judge-human calibration.
 
 > 📘 **Full SDLC & Architecture Documentation**: See [SDLC_DOCUMENTATION.md](file:///c:/Users/aseem/OneDrive/Dokumen/customersupporthiver/SDLC_DOCUMENTATION.md) for detailed system design, requirements, dataflow diagrams, component specifications, and testing rubrics.
 >
