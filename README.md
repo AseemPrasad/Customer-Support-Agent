@@ -11,15 +11,28 @@ escalation), supports **multi-lingual replies across 6 languages** (`en`, `ja`, 
 >
 > 📝 **Architectural & Technical Decision Log**: See [DECISION_LOG.md](file:///c:/Users/aseem/OneDrive/Dokumen/customersupporthiver/DECISION_LOG.md) for a plain list of 16 non-obvious engineering decisions and their detailed rationales.
 
-## Key Capabilities & Highlights
+---
 
-- ⚡ **Sub-60s Parallel Evaluation**: Multi-threaded execution runner (`run_eval_fast.py`) running 8 workers in parallel over benchmark sets.
-- 🛡️ **0.0% Escalation FNR & Zero PII Leakage**: Deterministic regex circuit breakers intercepting Order IDs, phone numbers, and legal threats before LLM invocation.
-- 🔍 **Dynamic RAG Grounding**: ChromaDB dense vector store using `BAAI/bge-m3` over 154k resolved `@AmazonHelp` customer-agent pairs.
-- 🎨 **Neo-Brutalist Web UAT Dashboard**: Standalone Python HTTP server (`server.py`) with a interactive web interface (`http://localhost:8000`) for ticket inspection and live RAG retrieval.
-- 🌐 **Multi-Lingual Brand Support**: Detects customer language (`en`, `ja`, `es`, `pt`, `fr`, `hi`) and appends localized brand signatures (`- Amazon Help`, `- Amazon ヘルプ`).
+## ⚡ Quickstart: Run Evaluation & Web UI in < 2 Minutes
 
-### Summary Benchmark Results (500 Golden Samples)
+### 1. Fast Parallel Evaluation (Sub-60s Execution)
+Run our parallel multi-threaded runner over the 500-sample hand-labelled golden set:
+
+```bash
+python run_eval_fast.py --dataset data/golden_set/golden_eval_500.gold.jsonl --samples 50 --workers 8
+```
+
+### 2. Interactive Web UAT Dashboard
+Launch the standalone server to test single tickets, view live RAG context, and inspect batch results:
+
+```bash
+python server.py
+```
+Open **`http://localhost:8000`** in your browser.
+
+---
+
+## 📊 Benchmark Results Summary (500 Golden Samples)
 
 | Metric | Trivial Baseline (Majority Class) | Simple Baseline (Zero-Shot 8B LLM) | Our System (Full Pipeline) |
 | :--- | :---: | :---: | :---: |
@@ -29,6 +42,18 @@ escalation), supports **multi-lingual replies across 6 languages** (`en`, `ja`, 
 | **Intent Macro F1** | 0.12 | 0.69 | **0.88** |
 | **ROUGE-L Score** | 0.14 | 0.38 | **0.58** |
 | **LLM Judge Rating** | 1.8 / 5.0 | 3.6 / 5.0 | **4.6 / 5.0** |
+
+---
+
+## Key Capabilities & Highlights
+
+- ⚡ **Sub-60s Parallel Evaluation**: Multi-threaded execution runner (`run_eval_fast.py`) running 8 workers in parallel over benchmark sets.
+- 🛡️ **0.0% Escalation FNR & Zero PII Leakage**: Deterministic regex circuit breakers intercepting Order IDs, phone numbers, and legal threats before LLM invocation.
+- 🔍 **Dynamic RAG Grounding**: ChromaDB dense vector store using `BAAI/bge-m3` over 154k resolved `@AmazonHelp` customer-agent pairs.
+- 🎨 **Neo-Brutalist Web UAT Dashboard**: Standalone Python HTTP server (`server.py`) with an interactive web interface (`http://localhost:8000`) for ticket inspection and live RAG retrieval.
+- 🌐 **Multi-Lingual Brand Support**: Detects customer language (`en`, `ja`, `es`, `pt`, `fr`, `hi`) and appends localized brand signatures (`- Amazon Help`, `- Amazon ヘルプ`).
+
+---
 
 ## Project Overview
 
